@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculadora_JERH.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label  Text="Operaciones"/>
+        <Grid>
+            <Button Grid.Row="0" Grid.Column="0" Text="AC" x:Name="btnAc" Clicked="BtnAc" />
+            <Button Grid.Row="0" Grid.Column="1" Text="()"/>
+            <Button Grid.Row="0" Grid.Column="2" Text="%" x:Name="btnPorcentaje" Clicked="BtnPorcentaje"/>
+            <Button Grid.Row="0" Grid.Column="3" Text="/" x:Name="btnDiv" Clicked="BtnDiv"/>
+
+            <Button Grid.Row="1" Grid.Column="0" Text="7" x:Name="btn7" Clicked="Btn7"/>
+            <Button Grid.Row="1" Grid.Column="1" Text="8" x:Name="btn8" Clicked="Btn8"/>
+            <Button Grid.Row="1" Grid.Column="2" Text="9" x:Name="btn9" Clicked="Btn9"/>
+            <Button Grid.Row="1" Grid.Column="3" Text="X" x:Name="btnX" Clicked="BtnX"/>
+
+            <Button Grid.Row="2" Grid.Column="0" Text="4" x:Name="btn4" Clicked="Btn4"/>
+            <Button Grid.Row="2" Grid.Column="1" Text="5" x:Name="btn5" Clicked="Btn5"/>
+            <Button Grid.Row="2" Grid.Column="2" Text="6" x:Name="btn6" Clicked="Btn6"/>
+            <Button Grid.Row="2" Grid.Column="3" Text="-" x:Name="btnResta" Clicked="BtnResta"/>
+
+            <Button Grid.Row="3" Grid.Column="0" Text="1" x:Name="btn1" Clicked="Btn1"/>
+            <Button Grid.Row="3" Grid.Column="1" Text="2" x:Name="btn2" Clicked="Btn2"/>
+            <Button Grid.Row="3" Grid.Column="2" Text="3" x:Name="btn3" Clicked="Btn3"/>
+            <Button Grid.Row="3" Grid.Column="3" Text="+" x:Name="btnSuma" Clicked="BtnSuma"/>
+
+            <Button Grid.Row="4" Grid.Column="0" Text="0" x:Name="btn0" Clicked="Btn0"/>
+            <Button Grid.Row="4" Grid.Column="1" Text="." x:Name="BtnPunto" Clicked="BtnPunto"/>
+            <Button Grid.Row="4" Grid.Column="2" Text="Res" x:Name="btnBorrar" />
+            <Button Grid.Row="4" Grid.Column="3" Text="=" x:Name="btnResultado" Clicked="BtnResultado"/>
+
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>
