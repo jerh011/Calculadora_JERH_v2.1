@@ -1,0 +1,16 @@
+C:\Users\Jesus\Source\Repos\Calculadora_JERH\Calculadora_JERH\obj\Debug\netstandard2.0\Calculadora_JERH.csproj.AssemblyReference.cache
+C:\Users\Jesus\Source\Repos\Calculadora_JERH\Calculadora_JERH\obj\Debug\netstandard2.0\Calculadora_JERH.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jesus\Source\Repos\Calculadora_JERH\Calculadora_JERH\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Jesus\Source\Repos\Calculadora_JERH\Calculadora_JERH\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Jesus\Source\Repos\Calculadora_JERH\Calculadora_JERH\obj\Debug\netstandard2.0\Calculadora_JERH.AssemblyInfoInputs.cache
+C:\Users\Jesus\Source\Repos\Calculadora_JERH\Calculadora_JERH\obj\Debug\netstandard2.0\Calculadora_JERH.AssemblyInfo.cs
+C:\Users\Jesus\Source\Repos\Calculadora_JERH\Calculadora_JERH\obj\Debug\netstandard2.0\Calculadora_JERH.csproj.CoreCompileInputs.cache
+C:\Users\Jesus\Source\Repos\Calculadora_JERH\Calculadora_JERH\bin\Debug\netstandard2.0\Calculadora_JERH.deps.json
+C:\Users\Jesus\Source\Repos\Calculadora_JERH\Calculadora_JERH\bin\Debug\netstandard2.0\Calculadora_JERH.dll
+C:\Users\Jesus\Source\Repos\Calculadora_JERH\Calculadora_JERH\bin\Debug\netstandard2.0\Calculadora_JERH.pdb
+C:\Users\Jesus\Source\Repos\Calculadora_JERH\Calculadora_JERH\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Jesus\Source\Repos\Calculadora_JERH\Calculadora_JERH\obj\Debug\netstandard2.0\Calculadora_JERH.dll
+C:\Users\Jesus\Source\Repos\Calculadora_JERH\Calculadora_JERH\obj\Debug\netstandard2.0\refint\Calculadora_JERH.dll
+C:\Users\Jesus\Source\Repos\Calculadora_JERH\Calculadora_JERH\obj\Debug\netstandard2.0\Calculadora_JERH.pdb
+C:\Users\Jesus\Source\Repos\Calculadora_JERH\Calculadora_JERH\obj\Debug\netstandard2.0\ref\Calculadora_JERH.dll
+C:\Users\Jesus\source\repos\Calculadora_JERH\Calculadora_JERH\obj\Debug\netstandard2.0\css\estilos.css.g.cs

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -16,19 +17,7 @@ namespace Calculadora_JERH
         }
 
         string cadena = "";
-        string cadena2 = "";
-        int operacopmes = 0;
-        int suma = 0;
-        int resta = 0;
-        int divicion = 0;
-        int multiplicacion = 0;
-        int porcentaje = 0;
 
-        char[] operadorArray ;
-        string[] numeros; 
-        int[] posiscion;
-        string[] reposiscion;
-        string[] reposiscion2;
         public void Btn0(object sender, EventArgs e)
         {
             cadena += "0";
@@ -49,7 +38,8 @@ namespace Calculadora_JERH
             cadena += "3";
             Operacion.Text = cadena;
         }
-        public void Btn4(object sender, EventArgs e) {
+        public void Btn4(object sender, EventArgs e)
+        {
             cadena += "4";
             Operacion.Text = cadena;
         }
@@ -80,16 +70,13 @@ namespace Calculadora_JERH
         }
         public void BtnAc(object sender, EventArgs e)
         {
-            cadena="";
+            cadena = "";
             Operacion.Text = cadena;
+            respuesta.Text = cadena;
         }
         public void BtnPorcentaje(object sender, EventArgs e)
         {
-            if (cadena == "")
-                Operacion.Text = cadena;
-            else if (cadena[cadena.Length - 1] != '/' && cadena[cadena.Length - 1] != 'x' && cadena[cadena.Length - 1] != '-' && cadena[cadena.Length - 1] != '+' && cadena[cadena.Length - 1] != '%' && cadena != "")
-                cadena += "%";
-            Operacion.Text = cadena;
+        
         }
         public void BtnDiv(object sender, EventArgs e)
         {
@@ -109,11 +96,11 @@ namespace Calculadora_JERH
         }
         public void BtnSuma(object sender, EventArgs e)
         {
-            if(cadena == "")
+            if (cadena == "")
                 Operacion.Text = cadena;
-            else  if (cadena[cadena.Length - 1] != '/' && cadena[cadena.Length - 1] != 'x' && cadena[cadena.Length - 1] != '-' && cadena[cadena.Length - 1] != '+' && cadena[cadena.Length - 1] != '%')
+            else if (cadena[cadena.Length - 1] != '/' && cadena[cadena.Length - 1] != 'x' && cadena[cadena.Length - 1] != '-' && cadena[cadena.Length - 1] != '+' && cadena[cadena.Length - 1] != '%')
                 cadena += "+";
-           
+
             Operacion.Text = cadena;
         }
         public void BtnPunto(object sender, EventArgs e)
@@ -125,13 +112,13 @@ namespace Calculadora_JERH
         {
             if (cadena == "")
                 Operacion.Text = cadena;
-            else if (cadena[cadena.Length-1]!='/'&& cadena[cadena.Length - 1] != 'x' && cadena[cadena.Length - 1] != '-' && cadena[cadena.Length - 1] != '+' && cadena[cadena.Length - 1] != '%' && cadena != "")
-            cadena += "-";
+            else if (cadena[cadena.Length - 1] != '/' && cadena[cadena.Length - 1] != 'x' && cadena[cadena.Length - 1] != '-' && cadena[cadena.Length - 1] != '+' && cadena[cadena.Length - 1] != '%' && cadena != "")
+                cadena += "-";
             Operacion.Text = cadena;
         }
         private void BtnBorrar(object sender, EventArgs e)
         {
-            char[] caracteres = cadena.ToCharArray(); 
+            char[] caracteres = cadena.ToCharArray();
             if (caracteres.Length > 0)
             {
                 Array.Resize(ref caracteres, caracteres.Length - 1);
@@ -141,90 +128,51 @@ namespace Calculadora_JERH
         }
         public void BtnResultado(object sender, EventArgs e)
         {
-            Contadores();
-            Resultado.Text = Convert.ToString(operacopmes);
-            operacopmes = 0;
+
+            Resultado();
         }
-        private void Contadores()
+
+        public void Resultado()
         {
-                for (int i = 0; i < cadena.Length; i++)
+            string[] operadores = { "+", "-", "x", "/" };
+            string[] elementos = cadena.Split(operadores, StringSplitOptions.RemoveEmptyEntries);
+            string[] operadoresEnExpresion = cadena.Split(elementos, StringSplitOptions.RemoveEmptyEntries);
+
+            double resultado = Convert.ToDouble(elementos[0]);
+
+            for (int i = 0; i < operadoresEnExpresion.Length; i++)
+            {
+                double numero = Convert.ToDouble(elementos[i + 1]);
+                string operador = operadoresEnExpresion[i];
+
+                if (operador == "x") 
                 {
-                    if (cadena[i] == '+')
-                        suma++;
-                    else if (cadena[i] == '-')
-                        resta++;
-                    else if (cadena[i] == '/')
-                        divicion++;
-                    else if (cadena[i] == 'x')
-                        multiplicacion++;
-                    else if(cadena[i] == '%')
-                    porcentaje++;
-            }
-            operacopmes=suma+resta+divicion+multiplicacion+ porcentaje;
-            Separador(/*operacopmes, suma, resta, divicion, multiplicacion*/);
-            reposiscionamiento();
-          //Operaciones();
-
-            suma =0;
-            resta=0;
-            divicion = 0; 
-           multiplicacion = 0;
-            porcentaje = 0;
-        }
-      
-        public void Separador(/*int operacopmes/*, int suma, int resta, int divicion, int multiplicacion*/)
-        {
-            operadorArray = new char[operacopmes];
-            numeros = new string[operacopmes + 1];
-            posiscion = new int[operacopmes];
-
-           
-            int x = 0;
-            for (int i = 0; i < cadena.Length; i++) 
-            if (cadena2[i] == '%' || cadena2[i] == '/' || cadena2[i] == 'x' || cadena2[i] == '-' || cadena2[i] == '+')
-            {
-                operadorArray[x] = cadena[i];
-                posiscion[x]=i;
-                x++;
-            }
-            for (int y = 0; y < numeros.Length; y++)
-            {
-                if (y == numeros.Length - 1)
-                    numeros[y] =cadena2.Substring(posiscion[y - 1] + 1, (cadena2.Length - 1) - posiscion[y - 1]);
-                else if (y == 0)//incio
-                    numeros[y] = cadena.Substring(y, posiscion[y]);
-                else if (y != numeros.Length && y != 0)
-                    numeros[y] = cadena.Substring(posiscion[y - 1] + 1, posiscion[y] - posiscion[y - 1] - 1);
-            }
-           
-            
-
-        }
-        public void reposiscionamiento()
-        {
-            reposiscion = new string[(operacopmes * 2) + 1];
-            //numeros
-            //posiscion
-            int X = 0;
-            for (int i = 0; i < numeros.Length; i++)
-            {
-
-                reposiscion[X] = numeros[i];
-                if (i < operadorArray.Length)
-                {
-                    X++;
-                    reposiscion[X] = Convert.ToString(operadorArray[i]);
+                        resultado *= numero;
+                        
                 }
+                else if (operador == "/") 
+                {
+                    if (numero == 0)
+                    {
+                        Operacion.Text = "No se puede dividir por cero.";
+                        respuesta.Text = "No se puede dividir por cero.";
+                    }
+                    resultado /= numero;
+                   
+                }
+                else if (operador == "+")
+                {
+                    resultado += numero;
+                }
+                else if (operador == "-")
+                {
+                    resultado -= numero;
 
-                X++;
+                }
+              
+                respuesta.Text = resultado.ToString();
             }
-           
-
-
         }
-            public void Operaciones() 
-            {
-               
-            }
     }
 }
+
