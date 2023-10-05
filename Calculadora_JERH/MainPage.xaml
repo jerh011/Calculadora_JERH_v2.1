@@ -7,7 +7,8 @@
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <Label  Text="Operaciones"/>
+        <Entry  Text="Operaciones" x:Name="Operacion" IsEnabled="False"/>
+        <Entry  Text="Resultado" x:Name="Resultado" IsEnabled="False"/>
         <Grid>
             <Button Grid.Row="0" Grid.Column="0" Text="AC" x:Name="btnAc" Clicked="BtnAc" />
             <Button Grid.Row="0" Grid.Column="1" Text="()"/>
@@ -31,7 +32,7 @@
 
             <Button Grid.Row="4" Grid.Column="0" Text="0" x:Name="btn0" Clicked="Btn0"/>
             <Button Grid.Row="4" Grid.Column="1" Text="." x:Name="BtnPunto" Clicked="BtnPunto"/>
-            <Button Grid.Row="4" Grid.Column="2" Text="Res" x:Name="btnBorrar" />
+            <Button Grid.Row="4" Grid.Column="2" Text="Borrar" x:Name="btnBorrar" Clicked="BtnBorrar" />
             <Button Grid.Row="4" Grid.Column="3" Text="=" x:Name="btnResultado" Clicked="BtnResultado"/>
 
         </Grid>
