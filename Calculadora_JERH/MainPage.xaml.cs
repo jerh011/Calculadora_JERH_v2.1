@@ -22,12 +22,13 @@ namespace Calculadora_JERH
         int resta = 0;
         int divicion = 0;
         int multiplicacion = 0;
+        int porcentaje = 0;
 
         char[] operadorArray ;
         string[] numeros; 
         int[] posiscion;
         string[] reposiscion;
-
+        string[] reposiscion2;
         public void Btn0(object sender, EventArgs e)
         {
             cadena += "0";
@@ -156,9 +157,11 @@ namespace Calculadora_JERH
                         divicion++;
                     else if (cadena[i] == 'x')
                         multiplicacion++;
-                }
-            operacopmes=suma+resta+divicion+multiplicacion;
-            Separador(operacopmes/*, suma, resta, divicion, multiplicacion*/);
+                    else if(cadena[i] == '%')
+                    porcentaje++;
+            }
+            operacopmes=suma+resta+divicion+multiplicacion+ porcentaje;
+            Separador(/*operacopmes, suma, resta, divicion, multiplicacion*/);
             reposiscionamiento();
           //Operaciones();
 
@@ -166,9 +169,10 @@ namespace Calculadora_JERH
             resta=0;
             divicion = 0; 
            multiplicacion = 0;
+            porcentaje = 0;
         }
       
-        public void Separador(int operacopmes/*, int suma, int resta, int divicion, int multiplicacion*/)
+        public void Separador(/*int operacopmes/*, int suma, int resta, int divicion, int multiplicacion*/)
         {
             operadorArray = new char[operacopmes];
             numeros = new string[operacopmes + 1];
@@ -214,10 +218,13 @@ namespace Calculadora_JERH
 
                 X++;
             }
+           
+
 
         }
-            public void Operaciones() {
-          
+            public void Operaciones() 
+            {
+               
             }
     }
 }
