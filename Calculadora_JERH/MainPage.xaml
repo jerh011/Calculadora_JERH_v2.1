@@ -7,40 +7,53 @@
         
     </ContentPage.Resources>
 
-    <StackLayout BackgroundColor="#1b1a1f">
-        <StackLayout StyleClass="Operaciones">      
-        <Label  Text="Operaciones" x:Name="Operacion" IsEnabled="False" StyleClass="Operaciones" Padding="24" Margin="0"/>
-        <Label  Text="Resultado" x:Name="respuesta" IsEnabled="False" StyleClass="Operaciones" StyleId="Resultado" Padding="24" Margin="0" />
+    <StackLayout BackgroundColor="#1b1a1f" >
+        <StackLayout StyleClass="Operaciones" Margin="0,0,0,20" Padding="30">
+            <Label  Text="Operaciones" x:Name="Operacion" IsEnabled="False" StyleClass="Operaciones" Padding="30" Margin="0" FontSize="Large" />
+            <Label  Text="Resultado" x:Name="respuesta" IsEnabled="False" StyleClass="Operaciones" StyleId="Resultado" Padding="20" Margin="20" FontSize="Large" />
         </StackLayout>
+        <StackLayout Margin="0,0,0,0" Padding="0" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-        <Grid>
-            <Button Grid.Row="0" Grid.Column="0" Text="AC" x:Name="btnAc" Clicked="BtnAc" StyleClass="BotoAc" CornerRadius="30" />
-            <Button Grid.Row="0" Grid.Column="1" Text="( )" CornerRadius="30" StyleClass="Operaciones"/>
-            <Button Grid.Row="0" Grid.Column="2" Text="%" x:Name="btnPorcentaje" CornerRadius="30" StyleClass="Operaciones"/>
-            <Button Grid.Row="0" Grid.Column="3" Text="/" x:Name="btnDiv" Clicked="BtnDiv" StyleClass="Operaciones" CornerRadius="30"/>
+             <Button Grid.Row="0" Grid.Column="0" Text="AC" x:Name="btnAc" Clicked="BtnAc" StyleClass="BotoAc" CornerRadius="60" Padding="30"/>
+            <Button Grid.Row="0" Grid.Column="1" Text="( )"  StyleClass="Operaciones" Padding="35" CornerRadius="60"/>
+            <Button Grid.Row="0" Grid.Column="2" Text="%" x:Name="btnPorcentaje" StyleClass="Operaciones" Padding="35" CornerRadius="60"/>
+            <Button Grid.Row="0" Grid.Column="3" Text="/" x:Name="btnDiv" Clicked="BtnDiv" StyleClass="Operaciones" Padding="35" CornerRadius="60"/>
 
-            <Button Grid.Row="1" Grid.Column="0" Text="7" x:Name="btn7" Clicked="Btn7" StyleClass="Boton" CornerRadius="30"/>
-            <Button Grid.Row="1" Grid.Column="1" Text="8" x:Name="btn8" Clicked="Btn8" StyleClass="Boton" CornerRadius="30"/>
-            <Button Grid.Row="1" Grid.Column="2" Text="9" x:Name="btn9" Clicked="Btn9" StyleClass="Boton" CornerRadius="30"/>
-            <Button Grid.Row="1" Grid.Column="3" Text="X" x:Name="btnX" Clicked="BtnX" StyleClass="Operaciones" CornerRadius="30"/>
+            <Button Grid.Row="1" Grid.Column="0" Text="7" x:Name="btn7" Clicked="Btn7" StyleClass="Boton" Padding="35" CornerRadius="60" />
+            <Button Grid.Row="1" Grid.Column="1" Text="8" x:Name="btn8" Clicked="Btn8" StyleClass="Boton" Padding="35" CornerRadius="60"/>
+            <Button Grid.Row="1" Grid.Column="2" Text="9" x:Name="btn9" Clicked="Btn9" StyleClass="Boton" Padding="35" CornerRadius="60"/>
+            <Button Grid.Row="1" Grid.Column="3" Text="X" x:Name="btnX" Clicked="BtnX" StyleClass="Operaciones" Padding="35" CornerRadius="60"/>
 
-            <Button Grid.Row="2" Grid.Column="0" Text="4" x:Name="btn4" Clicked="Btn4" StyleClass="Boton" CornerRadius="30"/>
-            <Button Grid.Row="2" Grid.Column="1" Text="5" x:Name="btn5" Clicked="Btn5" StyleClass="Boton" CornerRadius="30"/>
-            <Button Grid.Row="2" Grid.Column="2" Text="6" x:Name="btn6" Clicked="Btn6" StyleClass="Boton" CornerRadius="30"/>
-            <Button Grid.Row="2" Grid.Column="3" Text="-" x:Name="btnResta" Clicked="BtnResta" StyleClass="Operaciones" CornerRadius="30"/>
+            <Button Grid.Row="2" Grid.Column="0" Text="4" x:Name="btn4" Clicked="Btn4" StyleClass="Boton" Padding="35" CornerRadius="60"/>
+            <Button Grid.Row="2" Grid.Column="1" Text="5" x:Name="btn5" Clicked="Btn5" StyleClass="Boton" Padding="35" CornerRadius="60"/>
+            <Button Grid.Row="2" Grid.Column="2" Text="6" x:Name="btn6" Clicked="Btn6" StyleClass="Boton" CornerRadius="60" Padding="35"/>
+            <Button Grid.Row="2" Grid.Column="3" Text="-" x:Name="btnResta" Clicked="BtnResta" StyleClass="Operaciones" CornerRadius="60" Padding="35"/>
 
-            <Button Grid.Row="3" Grid.Column="0" Text="1" x:Name="btn1" Clicked="Btn1" StyleClass="Boton" CornerRadius="30"/>
-            <Button Grid.Row="3" Grid.Column="1" Text="2" x:Name="btn2" Clicked="Btn2" StyleClass="Boton" CornerRadius="30"/>
-            <Button Grid.Row="3" Grid.Column="2" Text="3" x:Name="btn3" Clicked="Btn3" StyleClass="Boton" CornerRadius="30"/>
-            <Button Grid.Row="3" Grid.Column="3" Text="+" x:Name="btnSuma" Clicked="BtnSuma" StyleClass="Operaciones" CornerRadius="30"/>
+            <Button Grid.Row="3" Grid.Column="0" Text="1" x:Name="btn1" Clicked="Btn1" StyleClass="Boton" CornerRadius="60" Padding="35"/>
+            <Button Grid.Row="3" Grid.Column="1" Text="2" x:Name="btn2" Clicked="Btn2" StyleClass="Boton" CornerRadius="60" Padding="35"/>
+            <Button Grid.Row="3" Grid.Column="2" Text="3" x:Name="btn3" Clicked="Btn3" StyleClass="Boton" CornerRadius="60" Padding="35"/>
+            <Button Grid.Row="3" Grid.Column="3" Text="+" x:Name="btnSuma" Clicked="BtnSuma" StyleClass="Operaciones" CornerRadius="60" Padding="35"/>
 
-            <Button Grid.Row="4" Grid.Column="0" Text="0" x:Name="btn0" Clicked="Btn0" StyleClass="Boton" CornerRadius="30"/>
-            <Button Grid.Row="4" Grid.Column="1" Text="." x:Name="btnPunto" Clicked="BtnPunto" StyleClass="Boton" CornerRadius="30"/>
-            <Button Grid.Row="4" Grid.Column="2" Text="Borrar" x:Name="btnBorrar" Clicked="BtnBorrar" StyleClass="Boton" CornerRadius="30"/>
-            <Button Grid.Row="4" Grid.Column="3" Text="=" x:Name="btnResultado" Clicked="BtnResultado" StyleClass="Igual" CornerRadius="30"/>
-
-        </Grid>
-
+            <Button Grid.Row="4" Grid.Column="0" Text="0" x:Name="btn0" Clicked="Btn0" StyleClass="Boton" CornerRadius="60" Padding="35"/>
+            <Button Grid.Row="4" Grid.Column="1" Text="." x:Name="btnPunto" Clicked="BtnPunto" StyleClass="Boton" CornerRadius="60" Padding="35"/>
+            <Button Grid.Row="4" Grid.Column="2" Text="Borrar" x:Name="btnBorrar" Clicked="BtnBorrar" StyleClass="Boton" CornerRadius="60" Padding="35"/>
+            <Button Grid.Row="4" Grid.Column="3" Text="=" x:Name="btnResultado" Clicked="BtnResultado" StyleClass="Igual" CornerRadius="60" Padding="35"/>
+            </Grid>
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>

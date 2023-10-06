@@ -141,8 +141,6 @@ namespace Calculadora_JERH
             }
             else if (cadena[cadena.Length - 1] != '/' && cadena[cadena.Length - 1] != 'x' && cadena[cadena.Length - 1] != '-' && cadena[cadena.Length - 1] != '+' && cadena[cadena.Length - 1] != '%')
                 Resultado();
-           
-
         }
 
         public void Resultado()
