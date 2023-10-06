@@ -6,6 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using static Xamarin.Essentials.Permissions;
 
 namespace Calculadora_JERH
 {
@@ -105,7 +106,12 @@ namespace Calculadora_JERH
         }
         public void BtnPunto(object sender, EventArgs e)
         {
+
+            if (cadena == "")
+                Operacion.Text = cadena;
+            else if (cadena[cadena.Length - 1] != '.')
             cadena += ".";
+
             Operacion.Text = cadena;
         }
         public void BtnResta(object sender, EventArgs e)
@@ -128,8 +134,15 @@ namespace Calculadora_JERH
         }
         public void BtnResultado(object sender, EventArgs e)
         {
+            if (cadena == "") {
+                cadena += "0";
+                Operacion.Text = cadena;
+                Resultado();
+            }
+            else if (cadena[cadena.Length - 1] != '/' && cadena[cadena.Length - 1] != 'x' && cadena[cadena.Length - 1] != '-' && cadena[cadena.Length - 1] != '+' && cadena[cadena.Length - 1] != '%')
+                Resultado();
+           
 
-            Resultado();
         }
 
         public void Resultado()
@@ -170,8 +183,10 @@ namespace Calculadora_JERH
 
                 }
               
-                respuesta.Text = resultado.ToString();
+               
             }
+            respuesta.Text = resultado.ToString();
+            cadena= resultado.ToString();
         }
     }
 }
