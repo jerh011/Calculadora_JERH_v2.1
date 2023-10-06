@@ -149,11 +149,11 @@ namespace Calculadora_JERH
             string[] elementos = cadena.Split(operadores, StringSplitOptions.RemoveEmptyEntries);
             string[] operadoresEnExpresion = cadena.Split(elementos, StringSplitOptions.RemoveEmptyEntries);
 
-            double resultado = Convert.ToDouble(elementos[0]);
+            float resultado = Convert.ToSingle(elementos[0]);
 
             for (int i = 0; i < operadoresEnExpresion.Length; i++)
             {
-                double numero = Convert.ToDouble(elementos[i + 1]);
+                float numero = Convert.ToSingle(elementos[i + 1]);
                 string operador = operadoresEnExpresion[i];
 
                 if (operador == "x") 

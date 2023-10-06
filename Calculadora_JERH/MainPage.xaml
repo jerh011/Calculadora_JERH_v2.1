@@ -9,8 +9,19 @@
 
     <StackLayout BackgroundColor="#1b1a1f" >
         <StackLayout StyleClass="Operaciones" Margin="0,0,0,20" Padding="30">
-            <Label  Text="Operaciones" x:Name="Operacion" IsEnabled="False" StyleClass="Operaciones" Padding="30" Margin="0" FontSize="Large" />
-            <Label  Text="Resultado" x:Name="respuesta" IsEnabled="False" StyleClass="Operaciones" StyleId="Resultado" Padding="20" Margin="20" FontSize="Large" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+              
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Operaciones" x:Name="Operacion" IsEnabled="False" StyleClass="Operaciones" Padding="30" Margin="0" FontSize="Large" />
+             <Label Grid.Row="1" Grid.Column="0" Text="Resultado" x:Name="respuesta" IsEnabled="False" StyleClass="Operaciones" StyleId="Resultado" Padding="20" Margin="20" FontSize="Large" />
+            </Grid>
         </StackLayout>
         <StackLayout Margin="0,0,0,0" Padding="0" >
             <Grid>
